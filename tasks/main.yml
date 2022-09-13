@@ -36,6 +36,7 @@
 
 - name: configure dns servers - /etc/resolv.conf
   become: yes
+  become_user: root
   ansible.builtin.template:
     src: etc/resolv.conf.j2
     dest: "{{ dns_resolvconf_file }}"
