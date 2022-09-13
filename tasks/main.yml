@@ -35,6 +35,7 @@
     - dns-remove-resolvconf
 
 - name: configure dns servers - /etc/resolv.conf
+  become: yes
   ansible.builtin.template:
     src: etc/resolv.conf.j2
     dest: "{{ dns_resolvconf_file }}"
